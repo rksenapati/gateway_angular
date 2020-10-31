@@ -29,7 +29,6 @@
                         </div>
                         <div class="form-group">
                             <label for="cardNumber">Card number<code>*</code></label>
-                            <!-- <div class="input-group"> -->
                             <input type="text" placeholder="Your card number" class="form-control"
                                 formControlName="cardNumber" (keyup)="checkCharType($event,'16','cardNumber')">
                             <div *ngIf="form.cardNumber.errors && form.cardNumber.touched" class="required">
@@ -37,38 +36,18 @@
                                 <div *ngIf="form.cardNumber.errors.minlength">Should not lessthan 16</div>
                                 <div *ngIf="form.cardNumber.errors.maxlength">Should not gretterthan 16</div>
                             </div>
-                            <!-- <div class="input-group-append">
-                      <span class="input-group-text text-muted">
-                                                  <i class="fa fa-cc-visa mx-1"></i>
-                                                  <i class="fa fa-cc-amex mx-1"></i>
-                                                  <i class="fa fa-cc-mastercard mx-1"></i>
-                                              </span>
-                    </div> -->
-                            <!-- </div> -->
                         </div>
                         <div class="row">
                             <div class="col-sm-8">
                                 <div class="form-group">
                                     <label><span class="hidden-xs">Expiration <code>*</code></span></label>
-                                    <!-- <div class="input-group">
-                                        <select class="form-control">
-                                            <option value="">Select Month</option>
-                                            <option [value]="month.value" *ngFor="let month of months">{{month.name}}</option>
-                                        </select>
-                                        <select class="form-control">
-                                            <option value="">Select Year</option>
-                                            <option [value]="year.value" *ngFor="let year of years">{{year.name}}</option>
-                                        </select>
-                                    </div> -->
-                                    <!-- <div class="input-group"> -->
+
                                     <input class="form-control" placeholder="mm-yyyy" name="date" bsDatepicker
                                         #dp="bsDatepicker" [bsConfig]="bsConfig" formControlName="expiary">
                                     <div *ngIf="form.expiary.errors && form.expiary.touched" class="required">
                                         <div *ngIf="form.expiary.errors.required">This Field is required</div>
                                         <div *ngIf="form.expiary.errors.isDate">Enter correct expiary Date</div>
-                                        <!-- <div *ngIf="form.expiary.errors.maxlength">Should not gretterthan 16</div> -->
                                     </div>
-                                    <!-- </div> -->
                                 </div>
                             </div>
                             <div class="col-sm-4">
@@ -76,11 +55,11 @@
                                     <label data-toggle="tooltip" title="Three-digits code on the back of your card">CVV
                                         <i class="fa fa-question-circle"></i>
                                     </label>
-                                    <input type="text" required class="form-control" formControlName="cvv" (keyup)="checkCharType($event,'3','cvv')">
+                                    <input type="text" required class="form-control" formControlName="cvv"
+                                        (keyup)="checkCharType($event,'3','cvv')">
                                     <div *ngIf="form.cvv.errors && form.cvv.touched" class="required">
                                         <div *ngIf="form.cvv.errors.minlength">Should not lessthan 3</div>
                                         <div *ngIf="form.cvv.errors.maxlength">Should not grtterthan 3</div>
-                                        <!-- <div *ngIf="form.expiary.errors.maxlength">Should not gretterthan 16</div> -->
                                     </div>
                                 </div>
                             </div>
