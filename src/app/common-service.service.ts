@@ -14,7 +14,7 @@ export class CommonServiceService {
   private handleError(error: any) {
     return throwError(error);    
   }
-  public checkExiary(control: AbstractControl): CustomDateValidator | null {
+  public checkExpairy(control: AbstractControl): CustomDateValidator | null {
     // console.log(control.value);
     if ((control.value != undefined || control.value != null || control.value != '') ) {
       if(new Date(control.value) < new Date() ){
